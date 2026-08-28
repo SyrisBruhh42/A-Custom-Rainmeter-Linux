@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Left Monitor - System Telemetry HUD</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 24px;
+            width: 1080px;
+            height: 1920px;
+            box-sizing: border-box;
+            background: rgba(15, 28, 46, 0.85);
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            color: #EAF0EC;
+        }
+        .glass-card {
+            background: rgba(27, 42, 38, 0.45);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(138, 154, 134, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 24px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+        h2 {
+            margin-top: 0;
+            color: #8A9A86;
+            font-size: 20px;
+            border-bottom: 1px solid rgba(138, 154, 134, 0.2);
+            padding-bottom: 8px;
+        }
+        .stat-row {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 0;
+        }
+        .bar-container {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+            height: 12px;
+            width: 100%;
+            overflow: hidden;
+            margin-top: 4px;
+        }
+        .bar-fill {
+            background: linear-gradient(90deg, #8A9A86, #F4A261);
+            height: 100%;
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="glass-card">
+        <h2>CPU: AMD Ryzen 7 5800X</h2>
+        <div class="stat-row"><span>Overall Load</span><span id="cpu-load">0%</span></div>
+        <div class="bar-container"><div id="cpu-bar" class="bar-fill"></div></div>
+        <div class="stat-row"><span>Temperature</span><span id="cpu-temp">0°C</span></div>
+    </div>
+
+    <div class="glass-card">
+        <h2>GPU: RTX 4070 SUPER (12GB)</h2>
+        <div class="stat-row"><span>GPU Core Load</span><span id="gpu-load">0%</span></div>
+        <div class="bar-container"><div id="gpu-bar" class="bar-fill"></div></div>
+        <div class="stat-row"><span>VRAM Allocation</span><span id="gpu-vram">0 / 12282 MB</span></div>
+    </div>
+
+    <div class="glass-card">
+        <h2>Memory: 128 GB DDR4</h2>
+        <div class="stat-row"><span>RAM Utilization</span><span id="ram-used">0 GB</span></div>
+        <div class="bar-container"><div id="ram-bar" class="bar-fill"></div></div>
+    </div>
+</body>
+</html>

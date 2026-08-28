@@ -1,0 +1,29 @@
+name: Bug report
+description: Create a report to help us improve Lumina Desktop Suite
+title: "[BUG]: "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug Description
+      description: A clear and concise description of what the bug is.
+    validations:
+      required: true
+  - type: dropdown
+    id: component
+    attributes:
+      label: Component Affected
+      options:
+        - Sensor Daemon (Telemetry)
+        - Window Tracker Daemon (Occlusion)
+        - Theme Engine (Circadian / Glass)
+        - Widget UI Layouts
+        - CLI Tool (`lumina`)
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Output Logs / Diagnostic Report
+      description: Run `PYTHONPATH=. python3 src/cli/lumina.py status` or Crucible autopsy output.

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Right Monitor - Media Player & Audio Launcher HUD</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 24px;
+            width: 1080px;
+            height: 1920px;
+            box-sizing: border-box;
+            background: rgba(15, 28, 46, 0.85);
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            color: #EAF0EC;
+        }
+        .glass-card {
+            background: rgba(27, 42, 38, 0.45);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(138, 154, 134, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 24px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+        h2 {
+            margin-top: 0;
+            color: #8A9A86;
+            font-size: 20px;
+            border-bottom: 1px solid rgba(138, 154, 134, 0.2);
+            padding-bottom: 8px;
+        }
+        .media-title {
+            font-size: 22px;
+            font-weight: bold;
+        }
+        .media-artist {
+            color: #9BA8B0;
+            margin-bottom: 16px;
+        }
+        .controls {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+        }
+        .btn {
+            background: rgba(138, 154, 134, 0.2);
+            border: 1px solid rgba(138, 154, 134, 0.4);
+            color: #EAF0EC;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background: rgba(244, 162, 97, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="glass-card">
+        <h2>Now Playing</h2>
+        <div class="media-title" id="title">Campfire Ambient Soundscapes</div>
+        <div class="media-artist" id="artist">Sound BlasterX G6 Direct DAC</div>
+        <div class="controls">
+            <button class="btn">⏮ Prev</button>
+            <button class="btn">⏯ Pause</button>
+            <button class="btn">⏭ Next</button>
+        </div>
+    </div>
+
+    <div class="glass-card">
+        <h2>Audio Sink Selection</h2>
+        <div class="stat-row">Active Output: <strong>Sound BlasterX G6</strong></div>
+    </div>
+</body>
+</html>

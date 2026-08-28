@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lumina-desktop-suite"
+version = "1.0.0"
+description = "Dynamic, window-aware desktop widget & telemetry suite for Linux (Rainmeter equivalent)"
+authors = [{ name = "Jules Architect & User" }]
+requires-python = ">=3.10"
+dependencies = [
+    "psutil>=5.9.0",
+    "pyyaml>=6.0",
+]
+
+[project.scripts]
+lumina = "src.cli.lumina:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
